@@ -29,6 +29,8 @@ pip3 install -r requirements.txt
 cp -rfp inventory/sample inventory/mycluster
 CONFIG_FILE=inventory/mycluster/hosts.ini python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 
+echo "Giving 10 seconds for the disks to settle"
+sleep 10s
 ansible-playbook -u root -i inventory/mycluster/hosts.ini --become --become-user=root cluster.yml
 
 echo "Kubernetes deployed, retrieving configuration"
