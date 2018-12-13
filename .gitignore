@@ -1,0 +1,7 @@
+# Terraform stuff
+tokens.tfvars
+*.tfstate*
+.terraform
+
+# Result files
+kubeconfig
